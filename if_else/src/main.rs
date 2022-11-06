@@ -1,4 +1,6 @@
 mod looping;
+mod loop_labels;
+mod for_while;
 
 fn main() {
     let number: i32 = 5;
@@ -17,4 +19,6 @@ fn main() {
     println!("No = {}", no);
 
     looping::loops();
+    loop_labels::main();
+    for_while::main();
 }
