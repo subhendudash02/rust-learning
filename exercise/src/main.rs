@@ -1,10 +1,7 @@
+mod structs;
+
 fn add(x: i32, y: i32) -> i32 {
     x + y // or return x + y;
-}
-
-fn ref_fn(x: i32) -> &(i32, i32) {
-    let pt = (x, 0);
-    return &pt;
 }
 
 fn main() {
@@ -97,6 +94,12 @@ fn main() {
     r = &b;
     println!("New shared reference value: {}", *r);
 
-    let mut r2: &(i32, i32) = ref_fn(4);
-    println!("Point: ({:?})", *r2);
+    // exclusive/mutable references -- type: &mut T
+
+    let mut point = (1, 2);
+    let x_coord = &mut point.0;
+    *x_coord = 20;
+    println!("Point: {point:?}");
+
+    structs::structs();
 }
